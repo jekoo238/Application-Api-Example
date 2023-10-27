@@ -1,0 +1,12 @@
+#PAKSA HTTPS
+#RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#HAPUS FORMAT PHP
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^.]+)$ $1.php [NC,L]
+
+#CUSTOM ERROR
+ErrorDocument 404 /404.html
